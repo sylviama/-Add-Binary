@@ -25,8 +25,6 @@ namespace Rextester
             
             Stack<int> newList=new Stack<int>();
             
-            Console.WriteLine("Max Length: {0}",Math.Max(aLength,bLength));
-            
             int carry=0;
             for(var i=0; i<Math.Max(aLength,bLength);i++)
             {
@@ -45,7 +43,6 @@ namespace Rextester
                     aInt=int.Parse(aArray[aLength-1-i].ToString());
                     bInt=0;
                 }
-                Console.WriteLine("aInt: {0}, bInt: {1}", aInt, bInt);
                 
                 if(aInt+bInt+carry==0)
                 {
@@ -66,17 +63,13 @@ namespace Rextester
                 }
             }
             
+            //for the last digit if has a carry
             if(carry==1)
             {
                 newList.Push(1);
             }
                 
-                
-                
-            
             string result=String.Join("", newList.ToArray());
-            
-            
             
             return result;
         }
